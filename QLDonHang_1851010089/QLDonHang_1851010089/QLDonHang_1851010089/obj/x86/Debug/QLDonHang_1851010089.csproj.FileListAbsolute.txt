@@ -1,0 +1,18 @@
+D:\Visual Studio 2010\Projects\QLDonHang_1851010089\QLDonHang_1851010089\bin\Debug\QLDonHang_1851010089.exe.config
+D:\Visual Studio 2010\Projects\QLDonHang_1851010089\QLDonHang_1851010089\bin\Debug\QLDonHang_1851010089.exe
+D:\Visual Studio 2010\Projects\QLDonHang_1851010089\QLDonHang_1851010089\bin\Debug\QLDonHang_1851010089.pdb
+D:\Visual Studio 2010\Projects\QLDonHang_1851010089\QLDonHang_1851010089\obj\x86\Debug\QLDonHang_1851010089.Form1.resources
+D:\Visual Studio 2010\Projects\QLDonHang_1851010089\QLDonHang_1851010089\obj\x86\Debug\QLDonHang_1851010089.Properties.Resources.resources
+D:\Visual Studio 2010\Projects\QLDonHang_1851010089\QLDonHang_1851010089\obj\x86\Debug\QLDonHang_1851010089.csproj.GenerateResource.Cache
+D:\Visual Studio 2010\Projects\QLDonHang_1851010089\QLDonHang_1851010089\obj\x86\Debug\QLDonHang_1851010089.exe
+D:\Visual Studio 2010\Projects\QLDonHang_1851010089\QLDonHang_1851010089\obj\x86\Debug\QLDonHang_1851010089.pdb
+C:\Users\nhan4\OneDrive\Máy tính\QLDonHang_1851010089\QLDonHang_1851010089\QLDonHang_1851010089\bin\Debug\QLDonHang_1851010089.exe.config
+C:\Users\nhan4\OneDrive\Máy tính\QLDonHang_1851010089\QLDonHang_1851010089\QLDonHang_1851010089\bin\Debug\QLDonHang_1851010089.exe
+C:\Users\nhan4\OneDrive\Máy tính\QLDonHang_1851010089\QLDonHang_1851010089\QLDonHang_1851010089\bin\Debug\QLDonHang_1851010089.pdb
+C:\Users\nhan4\OneDrive\Máy tính\QLDonHang_1851010089\QLDonHang_1851010089\QLDonHang_1851010089\obj\x86\Debug\QLDonHang_1851010089.csprojAssemblyReference.cache
+C:\Users\nhan4\OneDrive\Máy tính\QLDonHang_1851010089\QLDonHang_1851010089\QLDonHang_1851010089\obj\x86\Debug\QLDonHang_1851010089.Form1.resources
+C:\Users\nhan4\OneDrive\Máy tính\QLDonHang_1851010089\QLDonHang_1851010089\QLDonHang_1851010089\obj\x86\Debug\QLDonHang_1851010089.Properties.Resources.resources
+C:\Users\nhan4\OneDrive\Máy tính\QLDonHang_1851010089\QLDonHang_1851010089\QLDonHang_1851010089\obj\x86\Debug\QLDonHang_1851010089.csproj.GenerateResource.cache
+C:\Users\nhan4\OneDrive\Máy tính\QLDonHang_1851010089\QLDonHang_1851010089\QLDonHang_1851010089\obj\x86\Debug\QLDonHang_1851010089.csproj.CoreCompileInputs.cache
+C:\Users\nhan4\OneDrive\Máy tính\QLDonHang_1851010089\QLDonHang_1851010089\QLDonHang_1851010089\obj\x86\Debug\QLDonHang_1851010089.exe
+C:\Users\nhan4\OneDrive\Máy tính\QLDonHang_1851010089\QLDonHang_1851010089\QLDonHang_1851010089\obj\x86\Debug\QLDonHang_1851010089.pdb
