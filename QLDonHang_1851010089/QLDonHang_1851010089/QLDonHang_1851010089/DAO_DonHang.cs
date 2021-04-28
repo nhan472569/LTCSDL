@@ -28,6 +28,18 @@ namespace QLDonHang_1851010089
             return ds;
         }
 
+        public dynamic LayCTDH(int maDH)
+        {
+            dynamic ds = db.Order_Details.Where(s => s.OrderID == maDH).Select(s => new
+            {
+                s.OrderID,
+                s.Product.ProductName,
+                s.UnitPrice,
+                s.Quantity
+            });
+            return ds;
+        }
+
         public dynamic LayDSKH() {
             var ds = db.Customers.Select(s => new { s.CustomerID, s.CompanyName });
             return ds;
@@ -43,5 +55,45 @@ namespace QLDonHang_1851010089
             db.Orders.InsertOnSubmit(donHang);
             db.SubmitChanges();
         }
+        public bool XoaDH(int maDH)
+        {
+            bool trangThai = false;
+            Order o = db.Orders.First(s => s.OrderID == maDH);
+
+            try
+            {
+                trangThai = true;
+                db.Orders.DeleteOnSubmit(o);
+                db.SubmitChanges();
+            }
+            catch (Exception)
+            {
+                trangThai = false;
+            }
+            return trangThai;
+        }
+
+        public bool SuaDH(Order donHang)
+        {
+            bool trangThai = false;
+            Order o = new Order();
+
+            try
+            {
+                o = db.Orders.First(s => s.OrderID == donHang.OrderID);
+                trangThai = true;
+                o.OrderDate = donHang.OrderDate;
+                o.CustomerID = donHang.CustomerID;
+                o.EmployeeID = donHang.EmployeeID;
+                db.SubmitChanges();
+            }
+            catch (Exception)
+            {
+                trangThai = false;
+            }
+
+            return trangThai;
+        }
+
     }
 }

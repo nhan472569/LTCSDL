@@ -18,6 +18,11 @@ namespace QLDonHang_1851010089
             dg.DataSource = da.LayDSDH1();
         }
 
+        public void LayDSDH_Detail(DataGridView dg, int maDH)
+        {
+            dg.DataSource = da.LayCTDH(maDH);
+        }
+
         public void LayDSKH(ComboBox cb) {
             cb.DataSource = da.LayDSKH();
             cb.DisplayMember = "CompanyName";
@@ -34,6 +39,29 @@ namespace QLDonHang_1851010089
         public void ThemDH(Order donHang)
         {
             da.ThemDH(donHang);
+        }
+        public void XoaDH(int maDH)
+        {
+            if (!da.XoaDH(maDH))
+            {
+                MessageBox.Show("Xoa khong thanh cong");
+            }
+            else
+            {
+                MessageBox.Show("Xoa don hang thanh cong");
+            }
+        }
+
+        public void SuaDH(Order donHang)
+        {
+            if (!da.SuaDH(donHang))
+            {
+                MessageBox.Show("Khong tim thay don hang");
+            }
+            else
+            {
+                MessageBox.Show("Sua don hang thanh cong");
+            }
         }
     }
 }
