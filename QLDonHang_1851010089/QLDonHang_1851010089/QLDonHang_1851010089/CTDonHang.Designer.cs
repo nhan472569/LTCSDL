@@ -192,6 +192,7 @@ namespace QLDonHang_1851010089
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -276,6 +277,7 @@ namespace QLDonHang_1851010089
             this.btSua.TabIndex = 2;
             this.btSua.Text = "Sửa";
             this.btSua.UseVisualStyleBackColor = true;
+            this.btSua.Click += new System.EventHandler(this.btSua_Click);
             // 
             // btXoa
             // 
@@ -285,6 +287,7 @@ namespace QLDonHang_1851010089
             this.btXoa.TabIndex = 1;
             this.btXoa.Text = "Xóa";
             this.btXoa.UseVisualStyleBackColor = true;
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
             // 
             // btThem
             // 
@@ -294,6 +297,7 @@ namespace QLDonHang_1851010089
             this.btThem.TabIndex = 0;
             this.btThem.Text = "Thêm";
             this.btThem.UseVisualStyleBackColor = true;
+            this.btThem.Click += new System.EventHandler(this.btThem_Click);
             // 
             // groupBox3
             // 
@@ -309,12 +313,13 @@ namespace QLDonHang_1851010089
             // 
             this.gVCTDH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gVCTDH.Location = new System.Drawing.Point(9, 18);
-            this.gVCTDH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gVCTDH.Margin = new System.Windows.Forms.Padding(2);
             this.gVCTDH.Name = "gVCTDH";
             this.gVCTDH.RowHeadersWidth = 62;
             this.gVCTDH.RowTemplate.Height = 28;
             this.gVCTDH.Size = new System.Drawing.Size(650, 269);
             this.gVCTDH.TabIndex = 0;
+            this.gVCTDH.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gVCTDH_CellClick);
             // 
             // menuStrip1
             // 
