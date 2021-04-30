@@ -56,21 +56,26 @@ namespace QLDonHang_1851010089
             db.SubmitChanges();
         }
         //Chi tiet don hang
-        public bool ThemCTDH(Order_Detail chiTietDH)
+        public bool ThemCTDH(Order_Detail chiTietDH, int maDH, int maSP)
         {
             bool trangThai = true;
 
-            Order_Detail od = db.Order_Details.First(s => s.OrderID == chiTietDH.OrderID && s.ProductID == chiTietDH.ProductID);
             try
             {
-                db.Order_Details.InsertOnSubmit(od);
-                db.SubmitChanges();
+                chiTietDH = db.Order_Details.First(s => s.OrderID == maDH && s.ProductID == maSP);
                 trangThai = false;
             }
             catch (Exception)
             {
                 trangThai = true;
             }
+
+            if (trangThai)
+            {
+                db.Order_Details.InsertOnSubmit(chiTietDH);
+                db.SubmitChanges(); 
+            }
+
             return trangThai;
 
         }

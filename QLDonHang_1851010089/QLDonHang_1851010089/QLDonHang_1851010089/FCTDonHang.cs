@@ -9,12 +9,12 @@ using System.Windows.Forms;
 
 namespace QLDonHang_1851010089
 {
-    public partial class CTDonHang : Form
+    public partial class FCTDonHang : Form
     {
 
         BUS_DonHang bus;
         public int maDH;
-        public CTDonHang()
+        public FCTDonHang()
         {
             InitializeComponent();
             bus = new BUS_DonHang();
@@ -54,7 +54,10 @@ namespace QLDonHang_1851010089
             od.UnitPrice = decimal.Parse(txtDonGia.Text);
             od.Quantity = short.Parse(txtSoLuong.Text);
 
-            bus.ThemCTDH(od);
+            int maDH = int.Parse(txtMaDH.Text);
+            int maSP = int.Parse(txtMaSP.Text);
+
+            bus.ThemCTDH(od, maDH, maSP);
             bus.LayDSDH_Detail(gVCTDH, maDH);
         }
 

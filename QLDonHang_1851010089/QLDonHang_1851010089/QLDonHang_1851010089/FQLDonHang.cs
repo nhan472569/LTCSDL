@@ -9,10 +9,10 @@ using System.Windows.Forms;
 
 namespace QLDonHang_1851010089
 {
-    public partial class QLDonHang : Form
+    public partial class FQLDonHang : Form
     {
         BUS_DonHang bus;
-        public QLDonHang()
+        public FQLDonHang()
         {
             InitializeComponent();
             bus = new BUS_DonHang();
@@ -80,7 +80,7 @@ namespace QLDonHang_1851010089
 
         private void gVDH_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            CTDonHang detail = new CTDonHang();
+            FCTDonHang detail = new FCTDonHang();
             detail.maDH = int.Parse(txtMaDH.Text);
             detail.ShowDialog();
         }

@@ -58,19 +58,15 @@ namespace QLDonHang_1851010089
             }
         }
         //Chi tiet don hang
-        public void ThemCTDH(Order_Detail chiTietDonHang)
+        public void ThemCTDH(Order_Detail chiTietDonHang,int maDH, int maSP)
         {
-            try
+            if (da.ThemCTDH(chiTietDonHang, maDH, maSP))
             {
-                da.ThemCTDH(chiTietDonHang);
+                MessageBox.Show("ok");
             }
-            catch (Exception)
+            else
             {
-                MessageBox.Show("Thêm chi tiết đơn hàng thành công!!");
-            }
-            finally
-            {
-                MessageBox.Show("Thêm chi tiết đơn hàng không thành công!!");
+                MessageBox.Show("not ok");
             }
         }
 

@@ -1,7 +1,7 @@
 ﻿
 namespace QLDonHang_1851010089
 {
-    partial class CTDonHang
+    partial class FCTDonHang
     {
         /// <summary>
         /// Required designer variable.
@@ -361,7 +361,7 @@ namespace QLDonHang_1851010089
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Name = "CTDonHang";
-            this.Text = "FOrderDetails";
+            this.Text = "Order Detail";
             this.Load += new System.EventHandler(this.CTDonHang_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -35,6 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
@@ -48,18 +49,32 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS_DonHang.cs" />
-    <Compile Include="CTDonHang.cs">
+    <Compile Include="BUS_SanPham.cs" />
+    <Compile Include="FCTDonHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CTDonHang.Designer.cs">
-      <DependentUpon>CTDonHang.cs</DependentUpon>
+    <Compile Include="FCTDonHang.Designer.cs">
+      <DependentUpon>FCTDonHang.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO_DonHang.cs" />
-    <Compile Include="QLDonHang.cs">
+    <Compile Include="DAO_SanPham.cs" />
+    <Compile Include="FQLNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLDonHang.Designer.cs">
-      <DependentUpon>QLDonHang.cs</DependentUpon>
+    <Compile Include="FQLNhanVien.Designer.cs">
+      <DependentUpon>FQLNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FQLSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FQLSanPham.Designer.cs">
+      <DependentUpon>FQLSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FQLDonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FQLDonHang.Designer.cs">
+      <DependentUpon>FQLDonHang.cs</DependentUpon>
     </Compile>
     <Compile Include="NW.designer.cs">
       <AutoGen>True</AutoGen>
@@ -68,16 +83,22 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CTDonHang.resx">
-      <DependentUpon>CTDonHang.cs</DependentUpon>
+    <EmbeddedResource Include="FCTDonHang.resx">
+      <DependentUpon>FCTDonHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLDonHang.resx">
-      <DependentUpon>QLDonHang.cs</DependentUpon>
+    <EmbeddedResource Include="FQLDonHang.resx">
+      <DependentUpon>FQLDonHang.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="NW.dbml.layout">
       <DependentUpon>NW.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="FQLNhanVien.resx">
+      <DependentUpon>FQLNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FQLSanPham.resx">
+      <DependentUpon>FQLSanPham.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
