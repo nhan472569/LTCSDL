@@ -192,7 +192,6 @@ namespace QLDonHang_1851010089
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -350,17 +349,18 @@ namespace QLDonHang_1851010089
             this.quảnLýĐơnHàngToolStripMenuItem.Size = new System.Drawing.Size(158, 25);
             this.quảnLýĐơnHàngToolStripMenuItem.Text = "Quản lý đơn hàng";
             // 
-            // CTDonHang
+            // FCTDonHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(764, 609);
+            this.ControlBox = false;
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Name = "CTDonHang";
+            this.Name = "FCTDonHang";
             this.Text = "Order Detail";
             this.Load += new System.EventHandler(this.CTDonHang_Load);
             this.groupBox1.ResumeLayout(false);

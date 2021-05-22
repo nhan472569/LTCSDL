@@ -356,17 +356,18 @@
             this.quảnLýĐơnHàngToolStripMenuItem.Size = new System.Drawing.Size(158, 25);
             this.quảnLýĐơnHàngToolStripMenuItem.Text = "Quản lý đơn hàng";
             // 
-            // QLDonHang
+            // FQLDonHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(744, 609);
+            this.ControlBox = false;
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Name = "QLDonHang";
+            this.Name = "FQLDonHang";
             this.Text = "Orders Manage";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);

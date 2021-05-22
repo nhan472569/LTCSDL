@@ -72,6 +72,8 @@ namespace QLDonHang_1851010089
 
         private void btThoat_Click(object sender, EventArgs e)
         {
+            FMain main = new FMain();
+            main.Show();
             this.Close();
         }
     }

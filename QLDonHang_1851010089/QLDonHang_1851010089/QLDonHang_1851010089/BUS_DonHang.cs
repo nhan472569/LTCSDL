@@ -33,12 +33,6 @@ namespace QLDonHang_1851010089
             cb.ValueMember = "EmployeeID";
         }
 
-        //Chi tiet don hang
-        public void LayDSDH_Detail(DataGridView dg, int maDH)
-        {
-            dg.DataSource = da.LayCTDH(maDH);
-        }
-
         // -----------Them----------
         //Don hang
         public void ThemDH(Order donHang)
@@ -57,19 +51,7 @@ namespace QLDonHang_1851010089
                 MessageBox.Show("Thêm đơn hàng thành công!!");
             }
         }
-        //Chi tiet don hang
-        public void ThemCTDH(Order_Detail chiTietDonHang,int maDH, int maSP)
-        {
-            if (da.ThemCTDH(chiTietDonHang, maDH, maSP))
-            {
-                MessageBox.Show("ok");
-            }
-            else
-            {
-                MessageBox.Show("not ok");
-            }
-        }
-
+        
         //-------------Xoa---------
         //Don hang
         public void XoaDH(int maDH)
@@ -83,19 +65,7 @@ namespace QLDonHang_1851010089
                 MessageBox.Show("Xóa đơn hàng thành công!!");
             }
         }
-        //Chi tiet don hang
-        public void XoaCTDH(int maDH,int maSP)
-        {
-            if (!da.XoaCTDH(maDH, maSP))
-            {
-                MessageBox.Show("Xóa chi tiết đơn hàng không thành công!!");
-            }
-            else
-            {
-                MessageBox.Show("Xóa chi tiết đơn hàng thành công!!");
-            }
-        }
-
+        
         //------------Sua-----------
         //Don hang
         public void SuaDH(Order donHang)
@@ -109,17 +79,6 @@ namespace QLDonHang_1851010089
                 MessageBox.Show("Sửa đơn hàng thành công!!");
             }
         }
-        //Chi tiet don hang
-        public void SuaCTDH(Order_Detail chiTietDonHang)
-        {
-            if (!da.SuaCTDH(chiTietDonHang))
-            {
-                MessageBox.Show("Sửa chi tiết đơn hàng không thành công!!");
-            }
-            else
-            {
-                MessageBox.Show("Sửa chi tiết đơn hàng thành công!!");
-            }
-        }
+       
     }
 }

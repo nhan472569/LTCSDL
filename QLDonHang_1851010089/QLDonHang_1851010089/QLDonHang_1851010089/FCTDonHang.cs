@@ -12,12 +12,12 @@ namespace QLDonHang_1851010089
     public partial class FCTDonHang : Form
     {
 
-        BUS_DonHang bus;
+        BUS_CTDH bus;
         public int maDH;
         public FCTDonHang()
         {
             InitializeComponent();
-            bus = new BUS_DonHang();
+            bus = new BUS_CTDH();
         }
 
         private void btThoat_Click(object sender, EventArgs e)
@@ -72,7 +72,6 @@ namespace QLDonHang_1851010089
 
         private void btSua_Click(object sender, EventArgs e)
         {
-            txtMaSP.Enabled = false;
             Order_Detail chiTietDonHang = new Order_Detail();
 
             chiTietDonHang.OrderID = int.Parse(txtMaDH.Text);

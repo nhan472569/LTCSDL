@@ -48,8 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS_CTDH.cs" />
     <Compile Include="BUS_DonHang.cs" />
+    <Compile Include="BUS_NhanVien.cs" />
     <Compile Include="BUS_SanPham.cs" />
+    <Compile Include="DAO_CTDH.cs" />
+    <Compile Include="DAO_NhanVien.cs" />
     <Compile Include="FCTDonHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +62,12 @@
     </Compile>
     <Compile Include="DAO_DonHang.cs" />
     <Compile Include="DAO_SanPham.cs" />
+    <Compile Include="FMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMain.Designer.cs">
+      <DependentUpon>FMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="FQLNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +96,9 @@
     <EmbeddedResource Include="FCTDonHang.resx">
       <DependentUpon>FCTDonHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FMain.resx">
+      <DependentUpon>FMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FQLDonHang.resx">
       <DependentUpon>FQLDonHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -107,6 +120,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="NW.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
@@ -125,6 +139,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\work_from_home-wallpaper-1366x768.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
