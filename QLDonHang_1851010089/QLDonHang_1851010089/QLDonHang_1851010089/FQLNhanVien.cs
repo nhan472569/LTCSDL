@@ -50,6 +50,7 @@ namespace QLDonHang_1851010089
             string[] nameItems = name.Split(' ');
             em.FirstName = nameItems[0];
             em.LastName = nameItems[1];
+            em.BirthDate = dtpNgaySinh.Value;
             em.HomePhone = txtDienThoai.Text;
             em.Address = txtDiaChi.Text;
 
@@ -59,20 +60,26 @@ namespace QLDonHang_1851010089
 
         private void btXoa_Click(object sender, EventArgs e)
         {
-            //int maNV = int.Parse(dGNhanVien.CurrentRow.Cells[0].Value.ToString());
-            //busNV.XoaSP(maNV);
-            //busNV.LayDSVN(dGNhanVien);
+            int maNV = int.Parse(dGNhanVien.CurrentRow.Cells[0].Value.ToString());
+            busNV.XoaNV(maNV);
+            busNV.LayDSVN(dGNhanVien);
         }
 
         private void btSua_Click(object sender, EventArgs e)
         {
-            //int maNV = int.Parse(dGNhanVien.CurrentRow.Cells[0].Value.ToString());
-            //string name = txtHoten.Text;
-            //string phone = txtDienThoai.Text;
-            //string address = txtDiaChi.Text;
+            Employee em = new Employee();
 
-            //busNV.SuaTTNV(name, dtpNgaySinh.Value, phone, address, maNV);
-            //busNV.LayDSVN(dGNhanVien);
+            em.EmployeeID = int.Parse(dGNhanVien.CurrentRow.Cells[0].Value.ToString());
+            string name = txtHoten.Text;
+            string[] nameItems = name.Split(' ');
+            em.FirstName = nameItems[0];
+            em.LastName = nameItems[1];
+            em.BirthDate = dtpNgaySinh.Value;
+            em.HomePhone = txtDienThoai.Text;
+            em.Address = txtDiaChi.Text;
+
+            busNV.SuaTTNV(em);
+            busNV.LayDSVN(dGNhanVien);
         }
 
         private void btThoat_Click(object sender, EventArgs e)

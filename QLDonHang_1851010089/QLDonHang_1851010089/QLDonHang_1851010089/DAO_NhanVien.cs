@@ -35,50 +35,48 @@ namespace QLDonHang_1851010089
         {
             db.Employees.InsertOnSubmit(em);
             db.SubmitChanges();
-
-            //string[] nameItems = name.Split(' ');
-            //string firstName = nameItems[0];
-            //string lastName = nameItems[1];
-
-            //SqlCommand cmd;
-            //string query = string.Format("insert into Employees (FirstName, LastName, BirthDate, HomePhone ,Address) " +
-            //    "values ('{0}', '{1}', '{2}', '{3}', '{4}')", firstName, lastName, birthDate.ToString("MM / dd / yyyy"), phone, address);
-
-            //cmd = new SqlCommand(query, conn);
-            //conn.Open();
-            //cmd.ExecuteNonQuery();
-            //conn.Close();
         }
 
-        public void XoaSP(Employee em, int maNV)
+        public bool XoaNV(int maNV)
         {
-            db.Employees.DeleteOnSubmit(em);
-            db.SubmitChanges();
+            bool trangThai = false;
 
-            //SqlCommand cmd;
-            //string query = string.Format("delete from Employees where EmployeeID = {0}", maNV);
-
-            //cmd = new SqlCommand(query, conn);
-            //conn.Open();
-            //cmd.ExecuteNonQuery();
-            //conn.Close();
+            try
+            {
+                Employee em = db.Employees.First(s => s.EmployeeID == maNV);
+                trangThai = true;
+                db.Employees.DeleteOnSubmit(em);
+                db.SubmitChanges();
+            }
+            catch (Exception)
+            {
+                trangThai = false;
+            }
+            return trangThai;
         }
 
-        //public void SuaTTNV(string name, DateTime birthDate, string phone, string address, int maNV)
-        //{
-        //    string[] nameItems = name.Split(' ');
-        //    string firstName = nameItems[0];
-        //    string lastName = nameItems[1];
-        //    SqlCommand cmd;
-        //    string query = string.Format("update Employees set FirstName = '{0}', LastName = '{1}'," +
-        //        " BirthDate = '{2}', HomePhone = '{3}', Address = '{4}' where EmployeeID = '{5}'",
-        //        firstName, lastName, birthDate.ToString("MM / dd / yyyy"), phone, address, maNV);
+        public bool SuaTTNV(Employee em)
+        {
+            bool trangThai = false;
+            Employee o = new Employee();
 
-        //    cmd = new SqlCommand(query, conn);
+            try
+            {
+                o = db.Employees.First(s => s.EmployeeID == em.EmployeeID);
+                trangThai = true;
+                o.FirstName = em.FirstName;
+                o.LastName = em.LastName;
+                o.BirthDate = em.BirthDate;
+                o.HomePhone = em.HomePhone;
+                o.Address = em.Address;
+                db.SubmitChanges();
+            }
+            catch (Exception)
+            {
+                trangThai = false;
+            }
 
-        //    conn.Open();
-        //    cmd.ExecuteNonQuery();
-        //    conn.Close();
-        //}
+            return trangThai;
+        }
     }
 }

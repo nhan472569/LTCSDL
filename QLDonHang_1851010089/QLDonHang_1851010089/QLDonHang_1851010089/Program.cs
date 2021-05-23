@@ -15,7 +15,7 @@ namespace QLDonHang_1851010089
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FQLNhanVien());
+            Application.Run(new FMain());
         }
     }
 }

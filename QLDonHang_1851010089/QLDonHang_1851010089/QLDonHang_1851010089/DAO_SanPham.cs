@@ -10,86 +10,136 @@ namespace QLDonHang_1851010089
 {
     class DAO_SanPham
     {
-        SqlConnection conn;
-        SqlDataAdapter da;
-        DataSet ds;
+        NWDataContext db;
         public DAO_SanPham()
         {
-            string query = ConfigurationManager.ConnectionStrings["QLDonHang_1851010089.Properties.Settings.NorthwindConnectionString"].ConnectionString;
-            conn = new SqlConnection(query);
+            db = new NWDataContext();
         }
 
-        public DataTable LayDSLoaiSP()
+        public dynamic LayDSLoaiSP()
         {
-            string query = "select CategoryID, CategoryName from Categories";
-            da = new SqlDataAdapter(query, conn);
+            var ds = db.Categories.Select(s => new { s.CategoryID, s.CategoryName });
+            return ds;
+            //string query = "select CategoryID, CategoryName from Categories";
+            //da = new SqlDataAdapter(query, conn);
 
-            ds = new DataSet();
-            da.Fill(ds);
-            return ds.Tables[0];
+            //ds = new DataSet();
+            //da.Fill(ds);
+            //return ds.Tables[0];
         }
 
-        public DataTable LayDSNCC()
+        public dynamic LayDSNCC()
         {
-            string query = "select SupplierID, CompanyName from Suppliers";
-            da = new SqlDataAdapter(query, conn);
+            var ds = db.Suppliers.Select(s => new { s.SupplierID, s.CompanyName });
+            return ds;
+            //string query = "select SupplierID, CompanyName from Suppliers";
+            //da = new SqlDataAdapter(query, conn);
 
-            ds = new DataSet();
-            da.Fill(ds);
-            return ds.Tables[0];
+            //ds = new DataSet();
+            //da.Fill(ds);
+            //return ds.Tables[0];
         }
 
-        public DataTable LayDSSP()
+        public dynamic LayDSSP()
         {
-            string query = "select ProductID, ProductName, UnitsInStock, UnitPrice, Categories.CategoryName, Suppliers.CompanyName" +
-                " from Products, Categories, Suppliers" +
-                " where Products.CategoryID = Categories.CategoryID" +
-                " and Products.SupplierID = Suppliers.SupplierID";
-            da = new SqlDataAdapter(query, conn);
+            dynamic ds = db.Products.Select(s => new
+            {
+                s.ProductID,
+                s.ProductName,
+                s.UnitsInStock,
+                s.UnitPrice,
+                s.Category.CategoryName,
+                s.Supplier.CompanyName
+            }).ToList();
 
-            ds = new DataSet();
-            da.Fill(ds);
-            return ds.Tables[0];
+            return ds;
+            //string query = "select ProductID, ProductName, UnitsInStock, UnitPrice, Categories.CategoryName, Suppliers.CompanyName" +
+            //    " from Products, Categories, Suppliers" +
+            //    " where Products.CategoryID = Categories.CategoryID" +
+            //    " and Products.SupplierID = Suppliers.SupplierID";
+            //da = new SqlDataAdapter(query, conn);
+
+            //ds = new DataSet();
+            //da.Fill(ds);
+            //return ds.Tables[0];
         }
 
-        public void ThemSP(string tenSP, int soLuong, double donGia, int maLoaiSP, int maNCC)
+        public void ThemSP(Product pr)
         {
-            SqlCommand cmd;
-            string query = string.Format("insert into Products (ProductName, UnitsInStock, UnitPrice, CategoryID ,SupplierID) " +
-                "values ('{0}', '{1}', '{2}', '{3}', '{4}')",
-                tenSP, soLuong, donGia, maLoaiSP, maNCC);
+            db.Products.InsertOnSubmit(pr);
+            db.SubmitChanges();
+            //SqlCommand cmd;
+            //string query = string.Format("insert into Products (ProductName, UnitsInStock, UnitPrice, CategoryID ,SupplierID) " +
+            //    "values ('{0}', '{1}', '{2}', '{3}', '{4}')",
+            //    tenSP, soLuong, donGia, maLoaiSP, maNCC);
 
-            cmd = new SqlCommand(query, conn);
+            //cmd = new SqlCommand(query, conn);
 
-            conn.Open();
-            cmd.ExecuteNonQuery();
-            conn.Close();
+            //conn.Open();
+            //cmd.ExecuteNonQuery();
+            //conn.Close();
         }
 
-        public void XoaSP(int maSP)
+        public bool XoaSP(int maSP)
         {
-            SqlCommand cmd;
-            string query = string.Format("delete from Products where ProductID = '{0}'", maSP);
+            bool trangThai = false;
 
-            cmd = new SqlCommand(query, conn);
+            try
+            {
+                Product pr = db.Products.First(s => s.ProductID == maSP);
+                db.Products.DeleteOnSubmit(pr);
+                db.SubmitChanges();
+                trangThai = true;
+            }
+            catch (Exception)
+            {
 
-            conn.Open();
-            cmd.ExecuteNonQuery();
-            conn.Close();
+                trangThai = false;
+            }
+
+            return trangThai;
+
+            //SqlCommand cmd;
+            //string query = string.Format("delete from Products where ProductID = '{0}'", maSP);
+
+            //cmd = new SqlCommand(query, conn);
+
+            //conn.Open();
+            //cmd.ExecuteNonQuery();
+            //conn.Close();
         }
 
-        public void SuaTTSP(int maSP, string tenSP, int soLuong, double donGia, int maLoaiSP, int maNCC)
+        public bool SuaTTSP(Product sanPham)
         {
-            SqlCommand cmd;
-            string query = string.Format("update Products set ProductName = '{0}', UnitsInStock = '{1}'," +
-                " UnitPrice = '{2}', CategoryID = '{3}', SupplierID = '{4}' where ProductID = '{5}'",
-                tenSP, soLuong, donGia, maLoaiSP, maNCC, maSP);
+            bool trangThai = false;
 
-            cmd = new SqlCommand(query, conn);
+            try
+            {
+                Product pr = db.Products.First(s => s.ProductID == sanPham.ProductID);
+                pr.ProductName = sanPham.ProductName;
+                pr.UnitsInStock = sanPham.UnitsInStock;
+                pr.UnitPrice = sanPham.UnitPrice;
+                pr.CategoryID = sanPham.CategoryID;
+                pr.SupplierID = sanPham.SupplierID;
+                trangThai = true;
+                db.SubmitChanges();
+            }
+            catch (Exception)
+            {
+                trangThai = false;
+            }
 
-            conn.Open();
-            cmd.ExecuteNonQuery();
-            conn.Close();
+            return trangThai;
+            //SqlCommand cmd;
+            //string query = string.Format("update Products set ProductName = '{0}', UnitsInStock = '{1}'," +
+            //    " UnitPrice = '{2}', CategoryID = '{3}', SupplierID = '{4}' where ProductID = '{5}'",
+            //    tenSP, soLuong, donGia, maLoaiSP, maNCC, maSP);
+
+            //cmd = new SqlCommand(query, conn);
+
+            //conn.Open();
+            //cmd.ExecuteNonQuery();
+            //conn.Close();
         }
     }
 }

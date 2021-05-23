@@ -23,14 +23,33 @@ namespace QLDonHang_1851010089
             da.ThemNV(em);
         }
 
-        //public void XoaSP(int maNV)
-        //{
-        //    da.XoaSP(maNV);
-        //}
+        public void XoaNV(int maNV)
+        {
+            if (!da.XoaNV(maNV))
+            {
+                MessageBox.Show("Xóa nhân viên không thành công!!");
+            }
+            else
+            {
+                MessageBox.Show("Xóa nhân viên thành công!!");
+            }
+        }
 
         //public void SuaTTNV(string name, DateTime birthDate, string phone, string address, int maNV)
         //{
         //    da.SuaTTNV(name, birthDate, phone, address, maNV);
         //}
+
+        public void SuaTTNV(Employee em)
+        {
+            if (!da.SuaTTNV(em))
+            {
+                MessageBox.Show("Sửa thông tin không thành công!!");
+            }
+            else
+            {
+                MessageBox.Show("Sửa thông tin thành công!!");
+            }
+        }
     }
 }

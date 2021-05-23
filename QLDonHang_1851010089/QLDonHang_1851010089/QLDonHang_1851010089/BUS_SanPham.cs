@@ -33,19 +33,33 @@ namespace QLDonHang_1851010089
             dg.DataSource = da.LayDSSP();
         }
 
-        public void ThemSP(string tenSP, int soLuong, double donGia, int maLoaiSP, int maNCC)
+        public void ThemSP(Product pr)
         {
-            da.ThemSP(tenSP, soLuong, donGia, maLoaiSP, maNCC);
+            da.ThemSP(pr);
         }
 
         public void XoaSP(int maSP)
         {
-            da.XoaSP(maSP);
+            if (!da.XoaSP(maSP))
+            {
+                MessageBox.Show("Xóa sản phẩm không thành công!!");
+            }
+            else
+            {
+                MessageBox.Show("Xóa sản phẩm thành công!!");
+            }
         }
 
-        public void SuaTTSP(int maSP, string tenSP, int soLuong, double donGia, int maLoaiSP, int maNCC)
+        public void SuaTTSP(Product pr)
         {
-            da.SuaTTSP(maSP, tenSP, soLuong, donGia, maLoaiSP, maNCC);
+            if (!da.SuaTTSP(pr))
+            {
+                MessageBox.Show("Sửa thông tin không thành công!!");
+            }
+            else
+            {
+                MessageBox.Show("Sửa thông tin thành công!!");
+            }
         }
     }
 }

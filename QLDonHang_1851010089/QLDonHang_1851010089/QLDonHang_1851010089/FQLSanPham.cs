@@ -39,13 +39,15 @@ namespace QLDonHang_1851010089
 
         private void btThem_Click(object sender, EventArgs e)
         {
-            string tenSP = txtTenSP.Text;
-            int soLuong = int.Parse(txtSoLuong.Text);
-            double donGia = double.Parse(txtDonGia.Text);
-            int maLoaiSP = int.Parse(cbLoaiSP.SelectedValue.ToString());
-            int maNCC = int.Parse(cbNCC.SelectedValue.ToString());
+            Product pr = new Product();
 
-            busSP.ThemSP(tenSP, soLuong, donGia, maLoaiSP, maNCC);
+            pr.ProductName = txtTenSP.Text;
+            pr.UnitsInStock = short.Parse(txtSoLuong.Text);
+            pr.UnitPrice = decimal.Parse(txtDonGia.Text);
+            pr.CategoryID = int.Parse(cbLoaiSP.SelectedValue.ToString());
+            pr.SupplierID = int.Parse(cbNCC.SelectedValue.ToString());
+
+            busSP.ThemSP(pr);
             busSP.LayDSSP(dGSP);
         }
 
@@ -59,14 +61,16 @@ namespace QLDonHang_1851010089
 
         private void btSua_Click(object sender, EventArgs e)
         {
-            int maSP = int.Parse(dGSP.CurrentRow.Cells[0].Value.ToString());
-            string tenSP = txtTenSP.Text;
-            int soLuong = int.Parse(txtSoLuong.Text);
-            double donGia = double.Parse(txtDonGia.Text);
-            int maLoaiSP = int.Parse(cbLoaiSP.SelectedValue.ToString());
-            int maNCC = int.Parse(cbNCC.SelectedValue.ToString());
+            Product pr = new Product();
 
-            busSP.SuaTTSP(maSP, tenSP, soLuong, donGia, maLoaiSP, maNCC);
+            pr.ProductID = int.Parse(dGSP.CurrentRow.Cells[0].Value.ToString());
+            pr.ProductName = txtTenSP.Text;
+            pr.UnitsInStock = short.Parse(txtSoLuong.Text);
+            pr.UnitPrice = decimal.Parse(txtDonGia.Text);
+            pr.CategoryID = int.Parse(cbLoaiSP.SelectedValue.ToString());
+            pr.SupplierID = int.Parse(cbNCC.SelectedValue.ToString());
+
+            busSP.SuaTTSP(pr);
             busSP.LayDSSP(dGSP);
         }
 
