@@ -20,7 +20,19 @@ namespace QLDonHang_1851010089
 
         public void ThemNV(Employee em)
         {
-            da.ThemNV(em);
+            try
+            {
+                da.ThemNV(em);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Thêm nhân viên không thành công");
+            }
+            finally
+            {
+                MessageBox.Show("Thêm nhân viên thành công");
+            }
+            
         }
 
         public void XoaNV(int maNV)

@@ -19,7 +19,6 @@ C:\Users\nhan4\OneDrive\Máy tính\QLDonHang_1851010089\QLDonHang_1851010089\QLD
 C:\Users\nhan4\OneDrive\Máy tính\LTCSDL\QLDonHang_1851010089\QLDonHang_1851010089\QLDonHang_1851010089\bin\Debug\QLDonHang_1851010089.exe.config
 C:\Users\nhan4\OneDrive\Máy tính\LTCSDL\QLDonHang_1851010089\QLDonHang_1851010089\QLDonHang_1851010089\bin\Debug\QLDonHang_1851010089.exe
 C:\Users\nhan4\OneDrive\Máy tính\LTCSDL\QLDonHang_1851010089\QLDonHang_1851010089\QLDonHang_1851010089\bin\Debug\QLDonHang_1851010089.pdb
-C:\Users\nhan4\OneDrive\Máy tính\LTCSDL\QLDonHang_1851010089\QLDonHang_1851010089\QLDonHang_1851010089\obj\x86\Debug\QLDonHang_1851010089.csprojAssemblyReference.cache
 C:\Users\nhan4\OneDrive\Máy tính\LTCSDL\QLDonHang_1851010089\QLDonHang_1851010089\QLDonHang_1851010089\obj\x86\Debug\QLDonHang_1851010089.FCTDonHang.resources
 C:\Users\nhan4\OneDrive\Máy tính\LTCSDL\QLDonHang_1851010089\QLDonHang_1851010089\QLDonHang_1851010089\obj\x86\Debug\QLDonHang_1851010089.FMain.resources
 C:\Users\nhan4\OneDrive\Máy tính\LTCSDL\QLDonHang_1851010089\QLDonHang_1851010089\QLDonHang_1851010089\obj\x86\Debug\QLDonHang_1851010089.FQLDonHang.resources
@@ -30,3 +29,4 @@ C:\Users\nhan4\OneDrive\Máy tính\LTCSDL\QLDonHang_1851010089\QLDonHang_1851010
 C:\Users\nhan4\OneDrive\Máy tính\LTCSDL\QLDonHang_1851010089\QLDonHang_1851010089\QLDonHang_1851010089\obj\x86\Debug\QLDonHang_1851010089.csproj.CoreCompileInputs.cache
 C:\Users\nhan4\OneDrive\Máy tính\LTCSDL\QLDonHang_1851010089\QLDonHang_1851010089\QLDonHang_1851010089\obj\x86\Debug\QLDonHang_1851010089.exe
 C:\Users\nhan4\OneDrive\Máy tính\LTCSDL\QLDonHang_1851010089\QLDonHang_1851010089\QLDonHang_1851010089\obj\x86\Debug\QLDonHang_1851010089.pdb
+C:\Users\nhan4\OneDrive\Máy tính\LTCSDL\QLDonHang_1851010089\QLDonHang_1851010089\QLDonHang_1851010089\obj\x86\Debug\QLDonHang_1851010089.csproj.AssemblyReference.cache

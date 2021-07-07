@@ -35,7 +35,17 @@ namespace QLDonHang_1851010089
 
         public void ThemSP(Product pr)
         {
-            da.ThemSP(pr);
+            try
+            {
+                da.ThemSP(pr);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Thêm sản phẩm không thành công");
+            }
+            finally {
+                MessageBox.Show("Thêm sản phẩm thành công");
+            }
         }
 
         public void XoaSP(int maSP)
